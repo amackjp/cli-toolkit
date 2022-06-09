@@ -1,0 +1,8 @@
+#Requirements
+sys
+os
+glob
+svglib
+reportlab
+PyPDF2
+zipfile
