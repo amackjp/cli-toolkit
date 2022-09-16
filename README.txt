@@ -1,29 +1,26 @@
 === CLI-toolkit ===
-PDFやZIPファイルを楽に取り扱うためのPythonスクリプトです
+PDFやZIPファイルを楽に取り扱うためのPythonスクリプトです。
 
-mrg.pyは複数のPDFを一つのファイルにまとめ、splt.pyは逆にページごとに分割し、cnvrt.pyはSVGファイルをPDFとPNGファイルに変換します
-extrct.pyはWindows標準機能では出来ないパスワード付ZIPファイルの解凍を行います
+-----プログラム-----
+- mrg.py    - 複数のPDFファイルを1つにまとめます
+- splt.py   - 1つのPDFをページごとに分割して保存します
+- cnvrt.py  - SVGファイルをPDFとPNGファイルに変換します
+- extrct.py - Windows標準機能では出来ないパスワード付きZIPファイルを解凍します
 
------programs-----
-- mrg.py    - merge several PDF files to 1 file
-- splt.py   - split by each pages
-- cnvrt.py  - convert svg file to pdf and png
-- extrct.py - extract zip with password
+-----使い方-----
+install:   依存関係は [ pip install -r requirements.txt ] で導入してください
 
--------usage------
-install:   run [ pip install -r requirements.txt ]
+mrg.py:    PDFファイルを ./merge に移動し、 [ python mrg.py ]
+splt.py:   PDFファイル(1つのみ)を ./split に移動し、 [ python splt.py ]
+cnvrt.py:  SVGファイル(1つのみ)を ./svgtopdf に移動し、 [ python cnvrt.py ]
+extrct.py: ZIPファイル(1つのみ)を ./exzip に移動し、 [ python extrct.py パスワード ]
 
-mrg.py:    move PDFs to ../merge 
-           run [ python mrg.py ]
-splt.py:   move PDF to ../split
-           run [ python splt.py ]
-cnvrt.py:  move SVG to ../svgtopdf
-           run [ python cnvrt.py SVGfilename.svg ]
-extrct.py: move ZIP to ../exzip
-           run [ python extrct.py ZIPfilename.zip password ]
+-----更新履歴・リポジトリ-----
+v1. 20220504 公開
+v2. 20220609 依存関係を明示
+v3. 20220916 ファイル名を自動取得するように。手動指定の必要は無くなりました
 
------repository----
-https://github.com/amackjp/cli-toolkit
+https://github.com/bosshii/cli-toolkit
      
 
 

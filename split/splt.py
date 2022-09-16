@@ -1,11 +1,13 @@
 import PyPDF2
+import glob
 
-def split_pdf_pages(src_path, dst_basepath):
-    src_pdf = PyPDF2.PdfFileReader(src_path)
-    for i in range(src_pdf.numPages):
-        dst_pdf = PyPDF2.PdfFileWriter()
-        dst_pdf.addPage(src_pdf.getPage(i))
-        with open('{}_{}.pdf'.format(dst_basepath, i), 'wb') as f:
-            dst_pdf.write(f)
+filename = "".join(glob.glob('*.pdf'))
+src_pdf = PyPDF2.PdfFileReader(filename)
+for i in range(src_pdf.numPages):
+    dst_pdf = PyPDF2.PdfFileWriter()
+    dst_pdf.addPage(src_pdf.getPage(i))
+    with open('{}_{}.pdf'.format(filename.replace('.pdf', '').replace('.PDF', ''), i+1), 'wb') as f:
+        dst_pdf.write(f)
 
-split_pdf_pages('doc.pdf', '2')
+
+

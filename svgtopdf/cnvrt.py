@@ -1,13 +1,9 @@
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF, renderPM
-import sys
-import os
+import glob
 
-args = sys.argv
-filename = args[1]
-filename_without_ext = os.path.splitext(os.path.basename(filename))[0]
+filename = "".join(glob.glob('*.svg'))
 
-drawing = svg2rlg(filename)
-renderPDF.drawToFile(drawing, filename_without_ext + ".pdf")
-drawing = svg2rlg(filename)
-renderPM.drawToFile(drawing, filename_without_ext + ".png", fmt="PNG")
+draw = svg2rlg(filename)
+renderPDF.drawToFile(draw, filename.replace('.svg', '').replace('.SVG', '') + ".pdf")
+renderPM.drawToFile(draw, filename.replace('.svg', '').replace('.SVG', '') + ".png", fmt="PNG")
