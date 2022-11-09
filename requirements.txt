@@ -2,3 +2,5 @@
 svglib
 reportlab
 PyPDF2
+opencv-python
+numpy
